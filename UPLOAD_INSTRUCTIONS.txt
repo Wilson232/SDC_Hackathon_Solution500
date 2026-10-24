@@ -1,0 +1,13 @@
+GITHUB UPLOAD INSTRUCTIONS
+
+1. Extract this ZIP on your computer.
+2. Open your GitHub repository, branch main.
+3. Remove the unused template src/main.py, src/utils.py and tests/test_utils.py.
+4. Upload the CONTENTS of this folder to the repository root (not the outer folder).
+5. Keep existing LICENSE unless you have chosen a different license.
+6. Confirm the upload includes package.json, package-lock.json, app.tsx, client/, server/, tests/, submission/.
+7. Do not upload a real .env file or any API keys.
+8. Review GitHub changes before committing.
+9. Optionally test locally: npm ci && npm test && npm run build.
+
+NOTE: .replit was copied from the actual Replit project; the Python template was not used.

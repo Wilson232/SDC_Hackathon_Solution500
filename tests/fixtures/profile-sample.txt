@@ -1,0 +1,22 @@
+Full Name: Alex Example
+Date of Birth: 14/03/1997 | Location: Kuala Lumpur, Malaysia
+Current Role: Software Engineer
+
+Education
+Bachelor of Computer Science
+Example University
+2015 - 2019
+
+Work Experience
+Software Engineer
+Example Systems
+Jan 2021 - Jan 2024
+Built and maintained customer-facing applications and collaborated with a product team.
+
+Technical Skills
+Programming Languages: Rust, Kotlin, Python
+Databases: PostgreSQL
+Communication
+
+Career Objective
+Seeking a software engineering role focused on reliable, accessible services.

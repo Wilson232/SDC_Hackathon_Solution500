@@ -1,0 +1,39 @@
+{
+  "name": "findmycareer-replit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsx server/index.ts",
+    "build": "vite build && node scripts/copy-assets.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.3.0",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^7.3.7"
+  },
+  "dependencies": {
+    "@clerk/express": "^2.1.83",
+    "@clerk/react": "^6.18.1",
+    "@clerk/shared": "^4.41.1",
+    "@clerk/themes": "^2.4.57",
+    "@replit/object-storage": "^1.0.0",
+    "cors": "^2.8.6",
+    "express": "^5.3.0",
+    "file-type": "^22.2.0",
+    "http-proxy-middleware": "^4.2.0",
+    "lucide-react": "^0.468.0",
+    "multer": "^2.5.0",
+    "pg": "^8.23.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "wouter": "^3.13.0"
+  }
+}

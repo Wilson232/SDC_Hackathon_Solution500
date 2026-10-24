@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FindMyCareer</title>
+  <script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
+  <script>
+    window.botpress.init({
+      botId:"e7552b54-c2e4-45c0-b35c-ce8f20a1b846",
+      clientId:"2e1486e0-ce81-4679-9f92-be3ae0e8ff63",
+      configuration:{
+        version:"v2",botName:"Navi",
+        botAvatar:window.location.origin+"/attached_assets/mascot_wave_1792831474286.png",
+        botDescription:"Get personalised help with Navi!",
+        website:{},email:{},phone:{},termsOfService:{},privacyPolicy:{},
+        feedbackEnabled:true,allowFileUpload:true,soundEnabled:true,conversationHistory:true,
+        homePageEnabled:true,welcomeHeading:"Move your career forward",
+        welcomeSubtitle:"Get practical, personalized guidance for your CV, career goals, and next steps.",
+        conversationStartersEnabled:false,conversationStarters:[],conversationStartersDisplayStyle:"cards",citationsEnabled:true
+      }
+    });
+  </script>
+  <script src="/language-overrides.js"></script>
+  <script src="/language-switcher.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config={theme:{extend:{colors:{white:'#F4F1F3',afternoon:{50:'#F5F4F4',100:'#B6BAC2',200:'#B6BAC2',300:'#97A1B3',400:'#747081',500:'#6A82A8',600:'#6A82A8',700:'#6C4F6E',800:'#3A324A',900:'#3A324A',950:'#3A324A'},slate:{50:'#E8E7E5',100:'#B6BAC2',200:'#C3C5C4',300:'#A9ABAA',400:'#747081',500:'#696576',600:'#5C5869',700:'#4C4659',800:'#3A324A',900:'#3A324A',950:'#3A324A'}}}}};
+  </script>
+</head>
+<body><div id="root"></div><script type="module" src="/client/main.tsx"></script></body>
+</html>
