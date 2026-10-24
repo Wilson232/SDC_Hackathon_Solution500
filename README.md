@@ -31,7 +31,7 @@
 | Live Demo         | https://findmycareer.replit.app                |
 | RunPod Endpoint   | Not used (N/A)      |
 | Slide Deck        | https://docs.google.com/presentation/d/13j79Ut8sPvdAuliBRA8zdP_7oK8V6_aNL2sjDHeOf3c/edit?usp=sharing |
-| Demo Video        | To be added                 |
+| Demo Video        | https://youtu.be/yuiXrEaLkm4?si=AGQMCWx0SVMod9Bj                 |
 
 ---
 
