@@ -6,9 +6,9 @@
 
 ---
 
-# Project Name
+# FindMyCareer
 
-> A one-sentence description of what your project does and who it is for.
+> An AI-assisted career guidance web app helping jobseekers, graduates, and career switchers explore job matches, identify skill gaps, and find learning opportunities.
 
 ---
 
@@ -16,22 +16,22 @@
 
 | Field                  | Details                                     |
 | ---------------------- | ------------------------------------------- |
-| **Team Name**          | Your Team Name                              |
-| **Team Domain**        | Domain 1 / Domain 2 *(choose one)*          |
-| **SDG Track (1–17)**   | e.g. SDG 11 — Sustainable Cities and Communities |
-| **Team Leader**        | Leader Name                                 |
-| **University**         | University Name(s)                          |
-| **Number of Members**  | e.g. 4                                      |
+| **Team Name**          | The Solution 500                              |
+| **Team Domain**        | Domain 1 — Aiversecity Future-Ready Workforce          |
+| **SDG Track (1–17)**   | SDGs 4, 5, 8, 9, 10 |
+| **Team Leader**        | Daniel Wilson Gunawan                                 |
+| **University**         | Xiamen University Malaysia                          |
+| **Number of Members**  | 4                                      |
 
 ## Links
 
 | Resource          | Link                                           |
 | ----------------- | ---------------------------------------------- |
-| GitHub Repository | https://github.com/your-username/your-project  |
-| Live Demo         | https://your-project.replit.app                |
-| RunPod Endpoint   | https://api.runpod.ai/v2/your-endpoint-id      |
-| Slide Deck        | https://example.com/slides                     |
-| Demo Video        | https://example.com/demo-video                 |
+| GitHub Repository | https://github.com/Wilson232/SDC_Hackathon_Solution500  |
+| Live Demo         | https://findmycareer.replit.app                |
+| RunPod Endpoint   | Not used (N/A)      |
+| Slide Deck        | https://docs.google.com/presentation/d/13j79Ut8sPvdAuliBRA8zdP_7oK8V6_aNL2sjDHeOf3c/edit?usp=sharing |
+| Demo Video        | To be added                 |
 
 ---
 
@@ -39,168 +39,177 @@
 
 ### Problem
 
-Describe the real-world problem you are solving in 2–4 sentences. Who is affected, and why does it matter?
+AI is reshaping job requirements faster than many workers and graduates can adapt. Jobseekers, career switchers, and people at risk of displacement may struggle to identify relevant roles and the skills needed to qualify. Employers and educators also need clearer evidence of changing workforce needs.
 
 ### Solution
 
-Explain how your project uses AI to solve the problem and what makes it valuable.
+FindMyCareer combines profile information with collected JobStreet job listings and Skool course information to support career matching and learning recommendations. Apify helps collect source data, Replit hosts the web application, and Botpress provides in-app career coaching. Recommendations support user decisions rather than replace human judgment; job and course information is based on collected snapshots and may become outdated.
 
 ### Key Features
 
-- **Feature 1** — Short description.
-- **Feature 2** — Short description.
-- **Feature 3** — Short description.
+- **Profile and CV intake** — Users can enter their education, experience, skills, preferences, and CV details.
+- **Career matching** — Matches user profiles with career opportunities and displays match information.
+- **Malaysia match heatmap** — Visualises location-based matching results.
+- **Course discovery** — Uses collected Skool course information to support skill development.
+- **AI career coach** — Botpress webchat answers career-related questions.
+- **SDG alignment and future-readiness** — Project goals align with SDGs 4, 5, 8, 9, and 10; confirm which mappings and forecasts are implemented in the deployed app.
 
 ### Tech Stack
 
 | Layer         | Technology                   |
 | ------------- | ---------------------------- |
-| Frontend      | e.g. HTML, React             |
-| Backend       | e.g. Python, Flask / FastAPI |
-| Database      | e.g. PostgreSQL, SQLite      |
-| AI / Compute  | RunPod (GPU)                 |
-| Hosting / Dev | Replit                       |
-
+| Frontend      | React 18.3.1, TypeScript / JavaScript, HTML, CSS, Lucide React |
+| Backend       | Node.js 24, Express 5, TypeScript (`tsx`) |
+| Database      | PostgreSQL 16 (`pg`), browser localStorage for selected client-side state |
+| Authentication | Clerk |
+| Build / UI    | Vite 7, Tailwind CSS (CDN), Babel |
+| CV Processing | PDF.js, Mammoth |
+| Data Sources  | JobStreet and Skool CSV snapshots collected with Apify |
+| AI / Coaching | Botpress Webchat; optional Gemini API described in technical declaration (live calls unverified) |
+| Storage       | Replit App Storage for certificate uploads |
+| Hosting / Dev | Replit; OpenAI Codex and Replit AI for development |
 ---
 
 ## Project Structure
 
 ```
 .
-├── docs/                    # Screenshots, diagrams
-├── runpod/
-│   └── handler.py           # RunPod serverless handler (GPU workload)
-├── src/
-│   ├── main.py              # Application entry point
-│   └── utils.py             # Helper functions
-├── submission/              # Required submission documents
-│   ├── SDC2026_TeamName_Preliminary.pdf      # Preliminary submission
-│   ├── SDC2026_TeamName_TechDeclaration.pdf  # Technology declaration
-│   ├── SDC2026_TeamName_Replit_POU.pdf       # Replit proof of use
-│   └── SDC2026_TeamName_Runpod_POU.pdf       # RunPod proof of use
-├── tests/
-│   └── test_utils.py        # Unit tests
-├── .env.example             # Example environment variables
+├── app.tsx                  # Main React application
+├── client/                  # Client entry point and certificate workflow
+├── server/                  # Express API, Clerk auth, PostgreSQL, certificates
+│   ├── index.ts             # Application server entry point
+│   └── schema.sql           # Database schema
+├── scripts/                 # Build, setup and verification utilities
+├── tests/                   # Node.js automated tests
+├── attached_assets/         # UI assets
+├── jobstreet-data.csv       # Job listing snapshot
+├── skool-course-data.csv    # Course catalogue snapshot
+├── cv-parser.mjs            # CV parsing utilities
+├── package.json             # Node.js scripts and dependencies
+├── package-lock.json        # Dependency lockfile
+├── vite.config.mjs          # Vite configuration
+├── submission/              # Required hackathon documents (add to repository)
+│   ├── SDC2026_The Solution 500_Preliminary.pdf
+│   ├── SDC2026_The Solution 500_TechDeclaration.pdf
+│   └── SDC2026_The Solution 500_Replit_POU.pdf
+├── .env.example             # Placeholder variables only (create if needed)
 ├── .gitignore
-├── .replit                  # Replit run configuration
-├── LICENSE
-├── requirements.txt         # Python dependencies
+├── .replit                  # Replit Node.js run/deploy configuration
+├── LICENSE                  # Submission repository license (if included)
 └── README.md
 ```
 
 ### Architecture
 
 ```
-User ──► Replit (App / API) ──► RunPod Endpoint (GPU model)
-                │
-                └──► Response returned to user
+User ──► React UI on Replit ──► Express API ──► PostgreSQL / App Storage
+                  │                 │
+                  ├──► JobStreet / Skool CSV snapshots (collected with Apify)
+                  ├──► Career matching / CV parsing
+                  └──► Botpress Webchat (career coaching)
 ```
 
+The supplied export contains snapshot CSV files; a scheduled live refresh from Apify is not verified. The optional Gemini API integration is not confirmed to be active.
 ---
 
 ## How to Run
 
 ### Option 1 — Run on Replit (Recommended)
 
-1. Open the [Replit Project](https://replit.com/@your-username/your-project), or import this repository via **Create Repl → Import from GitHub**.
-2. Open the **Secrets** tab (🔒) and add the variables listed in `.env.example`:
-   - `RUNPOD_API_KEY`
-   - `RUNPOD_ENDPOINT_ID`
-3. Click **Run**. Replit uses the `.replit` file to start `python src/main.py`.
+1. Open the [Live Demo](https://findmycareer.replit.app), or import the [GitHub repository](https://github.com/Wilson232/SDC_Hackathon_Solution500) into Replit.
+2. Set up the project's Clerk application, PostgreSQL database and private Replit App Storage bucket. Configure the environment variables described below using Replit Secrets, not committed files.
+3. Run `npm ci` to install dependencies. Initialize the development database with `bash scripts/post-merge.sh` when setting up a fresh development environment.
+4. Click **Run** or execute `npm start`. The actual `.replit` runs `npm start`, serving the application on port 5000.
 
 ### Option 2 — Run Locally
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/your-project.git
-cd your-project
+git clone https://github.com/Wilson232/SDC_Hackathon_Solution500.git
+cd SDC_Hackathon_Solution500
 
-# 2. Create and activate a virtual environment
-python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
+# 2. Install Node.js 24 and dependencies
+npm ci
 
-# 3. Install dependencies
-pip install -r requirements.txt
+# 3. Configure the required environment variables (use real values privately)
+# CLERK_SECRET_KEY, CLERK_PUBLISHABLE_KEY, VITE_CLERK_PUBLISHABLE_KEY
+# DATABASE_URL, ADMIN_EMAILS, CERTIFICATE_BUCKET_ID
 
-# 4. Configure environment variables
-cp .env.example .env            # then fill in your values
+# 4. Initialize the development PostgreSQL schema (once)
+bash scripts/post-merge.sh
 
-# 5. Run the app
-python src/main.py
+# 5. Start the app
+npm start
 ```
+
+A working local deployment also requires a configured Clerk instance, PostgreSQL database and storage bucket. The export does not contain hosted database contents or credentials. Production deployment uses `npm run build` followed by `NODE_ENV=production npm start`, with production database migrations configured separately.
 
 ### Run Tests
 
 ```bash
-python -m unittest discover tests
+npm test
 ```
-
 ---
 
 ## How We Use Replit *(Required)*
 
-Describe how your team used Replit. For example:
+- **Development:** Replit was used to develop, run, test and debug the React and Express application, with Replit AI assistance.
+- **Hosting:** The app is deployed at the Live Demo link above. The `.replit` file specifies `npm start`, an autoscale deployment target and a Vite build.
+- **Services:** The exported project uses PostgreSQL, Clerk authentication and Replit App Storage for its certificate workflow.
+- **Secrets:** Credentials must be configured privately using Replit Secrets or an equivalent secret manager; they are not included in the exported source.
 
-- **Development:** Collaborative coding in a shared Repl using Multiplayer.
-- **Hosting:** The app is deployed with Replit Deployments at the Live Demo link above.
-- **Secrets:** API keys are stored in Replit Secrets, never in the code.
-
-📄 Proof of use: [`submission/SDC2026_TeamName_Replit_POU.pdf`](submission/SDC2026_TeamName_Replit_POU.pdf)
+📄 Proof of use: [`submission/SDC2026_The Solution 500_Replit_POU.pdf`](submission/SDC2026_The%20Solution%20500_Replit_POU.pdf)
 
 ## How We Use RunPod *(Required)*
 
-Describe how your team used RunPod. For example:
-
-- **Workload:** Model inference (e.g. text generation, image processing) runs on a RunPod GPU.
-- **Setup:** `runpod/handler.py` is deployed as a **RunPod Serverless Endpoint**.
-- **Integration:** The Replit app sends requests to the endpoint using `RUNPOD_API_KEY` and `RUNPOD_ENDPOINT_ID`.
+RunPod was **not used** for FindMyCareer. The project instead uses Replit for hosting and computation, and Botpress for its embedded career coaching. No RunPod endpoint or RunPod proof-of-use document is available. Confirm with the organizers whether RunPod is mandatory for eligibility.
 
 Example request:
 
 ```bash
-curl -X POST https://api.runpod.ai/v2/$RUNPOD_ENDPOINT_ID/runsync \
-  -H "Authorization: Bearer $RUNPOD_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"input": {"prompt": "Hello"}}'
+# RunPod: not applicable to this project.
+# Start the actual Node.js application with: npm start
 ```
 
-📄 Proof of use: [`submission/SDC2026_TeamName_Runpod_POU.pdf`](submission/SDC2026_TeamName_Runpod_POU.pdf)
-
+📄 Proof of use: Not applicable (RunPod not used).
 ---
 
 ## Challenges & Learnings
 
-- What challenges did you face, and how did you overcome them?
-- What did your team learn?
+- **Data freshness:** JobStreet and Skool data is collected as snapshots; updating and validating source data remains important.
+- **Reliable recommendations:** Career matches and course suggestions must be checked for relevance and should not be treated as guaranteed predictions.
+- **Responsible development:** We learned to disclose third-party tools, protect credentials, and use sample profiles rather than sensitive personal data during demos.
 
 ## Future Improvements
 
-- [ ] Improvement 1
-- [ ] Improvement 2
+- [ ] Automate refreshes and display the source and collection date for job-market and course data.
+- [ ] Improve transparent match scoring, skills-gap explanations, and ordered reskilling plans.
+- [ ] Add or strengthen moderate-versus-fast AI disruption scenarios and meaningful SDG mappings.
+- [ ] Improve authentication, privacy controls, and validation of recommendations.
 
 ## Team
 
 | Name        | Role                | GitHub                                   |
 | ----------- | ------------------- | ---------------------------------------- |
-| Member Name | Team Lead / Backend | [@username](https://github.com/username) |
-| Member Name | Frontend            | [@username](https://github.com/username) |
-| Member Name | AI / RunPod         | [@username](https://github.com/username) |
-
+| Daniel Wilson Gunawan | Team Lead; AI-assisted coding, frontend, backend, documentation | [@Wilson232](https://github.com/Wilson232) |
+| Nathanael Suryaputra | Design, pitching, ideation, documentation | Not provided |
+| Kathallia Jennitta Setiadi | Design, pitching, ideation, documentation | Not provided |
+| Halleya Givetha Lysander | AI-assisted coding, frontend, backend | Not provided |
 ---
 
 ## Submission Checklist
 
-- [ ] Team name, domain (Domain 1 / Domain 2) and SDG track filled in
-- [ ] Slide deck link added
-- [ ] Demo video link added
-- [ ] Replit used, with proof of use in `submission/`
-- [ ] RunPod used, with proof of use in `submission/`
-- [ ] Preliminary submission completed (`SDC2026_TeamName_Preliminary.pdf`)
-- [ ] Technology declaration completed (`SDC2026_TeamName_TechDeclaration.pdf`)
-- [ ] Submission files renamed with your team name (replace `TeamName`)
-- [ ] "How to Run" steps verified
+- [x] Team name, domain (Domain 1) and SDG track filled in
+- [x] Slide deck link added
+- [ ] Demo video link added (pending)
+- [ ] Replit used; add and verify proof of use in `submission/`
+- [x] RunPod not used; marked as not applicable
+- [x] Preliminary proposal document prepared (`SDC2026_The Solution 500_Preliminary.pdf`)
+- [x] Technology declaration document prepared (`SDC2026_The Solution 500_TechDeclaration.pdf`)
+- [ ] Verify submission files are placed in `submission/` with the correct required filenames
+- [ ] "How to Run" steps based on source export; fresh setup not independently tested
 - [ ] No API keys or secrets committed to the repository
 
 ## License
 
-This project is licensed under the [Apache License 2.0](LICENSE).
+The submission template references the [Apache License 2.0](LICENSE). Confirm that the repository contains this LICENSE file and that the team intends to use it.
