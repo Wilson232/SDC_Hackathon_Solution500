@@ -1,0 +1,25 @@
+# Node.js dependencies and build output
+node_modules/
+dist/
+.cache/
+coverage/
+/generated-artifacts/
+
+# Python (if used for supporting scripts)
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Secrets and local environment variables
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
