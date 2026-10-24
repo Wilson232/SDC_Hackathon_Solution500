@@ -1,0 +1,5 @@
+# FindMyCareer is a Node.js / TypeScript application.
+# Python packages are not required to run the application.
+# Install Node.js dependencies with: npm install
+# Dependencies are defined in package.json and package-lock.json.
+# RunPod is not used by this project.
